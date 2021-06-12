@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="fetch.js"></script>
+    <title>4 лабораторная</title>
+  </head>
+
+  <body>
+    <!-- центрирование -->
+    <div class="card text-center">
+      <!--  шапка -->
+      <div class="card-header">
+        Генератор 10 профилей
+      </div>
+      <!-- кнопка-->
+      <div>
+        <button id="button" type="button" onclick="loading()" class="btn btn-primary">
+          Download
+        </button>
+      </div>
+      <!-- спинер в кнопке -->  
+      <div>
+        <button id="button_spin" type="button" onclick="loading()" class="btn btn-primary d-none">
+          <div class="spinner-border" role="status"></div>
+          <div><span>loading...</span></div>
+        </button>
+      </div>
+      
+      <!-- первые 5 карточек-->
+      <div id="cg-1" class="card-group d-none" style="max-width: 100%;"  >
+        <!-- 1 карточка-->
+        <div  class="card">
+          <img id="avatar0" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender0"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn0"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street0"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email0"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age0"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone0"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 2 карточка-->
+        <div class="card">
+          <img id="avatar1" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender1"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn1"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street1"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email1"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age1"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone1"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 карточка-->
+        <div class="card">
+          <img id="avatar2" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender2"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn2"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street2"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email2"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age2"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone2"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 карточка-->
+        <div class="card">
+          <img id="avatar3" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender3"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn3"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street3"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email3"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age3"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone3"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 5 карточка-->
+        <div class="card">
+          <img id="avatar4" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender4"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn4"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street4"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email4"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age4"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone4"> ???</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- вторые 5 карточек-->
+      <div id="cg-2" class="card-group d-none" style="max-width: 100%;">
+        <!-- 6 карточка-->
+        <div class="card">
+          <img id="avatar5" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender5"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn5"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street5"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email5"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age5"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone5"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 7 карточка-->
+        <div class="card">
+          <img id="avatar6" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender6"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn6"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street6"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email6"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age6"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone6"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 8 карточка-->
+        <div class="card">
+          <img id="avatar7" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender7"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn7"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street7"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email7"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age7"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone7"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 9 карточка-->
+        <div class="card">
+          <img id="avatar8" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender8"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn8"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street8"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email8"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age8"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone8"> ???</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 10 карточка-->
+        <div class="card">
+          <img id="avatar9" src="picture/image.jpg" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">
+              пол:
+              <span id="gender9"> ???</span>
+            </p>
+            <p class="card-text">
+              Фамилия и имя:
+              <span id="lnafn9"> ???</span>
+            </p>
+            <p class="card-text">
+              Адрес:
+              <span id="street9"> ???</span>
+            </p>
+            <p class="card-text">
+              Email:
+              <span id="email9"> ???</span>
+            </p>
+            <p class="card-text">
+              Возраст:
+              <span id="age9"> ???</span>
+            </p>
+            <p class="card-text">
+              Телефон:
+              <span id="phone9"> ???</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- подвал сайта -->
+      <div class="card-footer text-muted">
+        &copy; Сделано Струковым.Д.М из группы ВПИ21
+      </div>
+    </div>
+  </body>
+</html>
